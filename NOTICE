@@ -1,0 +1,7 @@
+This project is released under the BSD 3-Clause License, provided in the LICENSE file in the same directory. All files within this repository, except for any PGP keys (files ending in .key) are licensed this way.
+The provided Dockerfile is a script used to build a final monolithic image, and the script grabs other works that are licensed seperately, and that image is provided on Docker Hub for ease of use.
+
+Other projects included only in the final image:
+Nginx, released under the BSD 2-Clause License.
+Naxsi, relased under the GNU General Public License v3.0.
+nginx-dav-ext-module, released under the bSD 2-Clause License.
