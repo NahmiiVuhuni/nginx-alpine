@@ -32,7 +32,7 @@ RUN apk -U upgrade \
  && tar -xvzf /root/build/naxsi.tar.gz -C /root/build/nginx/naxsi --strip-components=1 \
  && unzip /root/build/nginx-dav-ext.zip -d /root/build/nginx/nginx-dav-ext -j \
  && /root/build/nginx/configure \
- --prefix=/usr/share/nginx \
+ --prefix=/usr/lib/nginx \
  --sbin-path=/sbin/nginx \
  --pid-path=/var/pid/nginx \
  --conf-path=/etc/nginx/nginx.conf \
@@ -76,7 +76,8 @@ RUN apk -U upgrade \
  && make CC=gcc-6 \
  && make install \
  && apk del --no-cache .build \
- && rm -rf /root/build /root/.gnupg
+ && rm -rf /root/build /root/.gnupg \
+ && ln -s /usr/lib/nginx/modules /etc/nginx/modules
 
 EXPOSE 80
 EXPOSE 443
