@@ -14,7 +14,7 @@ RUN mkdir /root/build/nginx
 WORKDIR /root/build/nginx
 
 RUN apk -U upgrade \
- && apk add --no-cache gzip pcre zlib perl openssl libxslt gd geoip curl \
+ && apk add --no-cache gzip pcre zlib perl openssl libxslt gd geoip \
  && apk add --no-cache --virtual .build linux-headers perl-dev gnupg wget gcc6 g++ pcre-dev zlib-dev make openssl-dev libxslt-dev gd-dev geoip-dev \
  && addgroup -g 101 -S nginx \
  && adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx \
@@ -32,12 +32,12 @@ RUN apk -U upgrade \
  && tar -xvzf /root/build/naxsi.tar.gz -C /root/build/nginx/naxsi --strip-components=1 \
  && unzip /root/build/nginx-dav-ext.zip -d /root/build/nginx/nginx-dav-ext -j \
  && /root/build/nginx/configure \
- --prefix=/usr/lib/nginx \
+ --prefix=/usr/share/nginx \
  --sbin-path=/sbin/nginx \
  --pid-path=/var/pid/nginx \
  --conf-path=/etc/nginx/nginx.conf \
- --http-log-path=/dev/stdout \
- --error-log-path=/dev/stderr \
+ --http-log-path=/var/log/nginx/access.log \
+ --error-log-path=/var/log/nginx/error.log \
  --pid-path=/var/pid/nginx.pid \
  --user=nginx \
  --group=nginx \
@@ -76,8 +76,7 @@ RUN apk -U upgrade \
  && make CC=gcc-6 \
  && make install \
  && apk del --no-cache .build \
- && rm -rf /root/build /root/.gnupg \
- && ln -s /usr/lib/nginx/modules /etc/nginx/modules
+ && rm -rf /root/build /root/.gnupg
 
 EXPOSE 80
 EXPOSE 443
