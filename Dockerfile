@@ -36,8 +36,8 @@ RUN apk -U upgrade \
  --sbin-path=/sbin/nginx \
  --pid-path=/var/pid/nginx \
  --conf-path=/etc/nginx/nginx.conf \
- --http-log-path=/var/log/nginx/access.log \
- --error-log-path=/var/log/nginx/error.log \
+ --http-log-path=/dev/stdout \
+ --error-log-path=/dev/stderr \
  --pid-path=/var/pid/nginx.pid \
  --user=nginx \
  --group=nginx \
