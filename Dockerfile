@@ -9,6 +9,8 @@ ENV VERSION_DAV_EXT_MODULE  v3.0.0
 
 COPY src /
 
+RUN mkdir /root/build/nginx
+
 WORKDIR /root/build/nginx
 
 RUN apk -U upgrade \
@@ -25,6 +27,7 @@ RUN apk -U upgrade \
  && printf "always-trust" > /root/.gnupg/gpg.conf \
  && gpg --verify /root/build/nginx.tar.gz.asc \
  && gpg --verify /root/build/naxsi.tar.gz.asc \
+ && mkdir /root/build/nginx/naxsi /root/build/nginx/nginx-dav-ext \
  && tar -xvzf /root/build/nginx.tar.gz -C /root/build/nginx --strip-components=1 \
  && tar -xvzf /root/build/naxsi.tar.gz -C /root/build/nginx/naxsi --strip-components=1 \
  && unzip /root/build/nginx-dav-ext.zip -d /root/build/nginx/nginx-dav-ext -j \
