@@ -14,7 +14,7 @@ RUN mkdir /root/build/nginx
 WORKDIR /root/build/nginx
 
 RUN apk -U upgrade \
- && apk add --no-cache gzip pcre zlib perl openssl libxslt gd geoip \
+ && apk add --no-cache gzip pcre zlib perl openssl libxslt gd geoip curl \
  && apk add --no-cache --virtual .build linux-headers perl-dev gnupg wget gcc6 g++ pcre-dev zlib-dev make openssl-dev libxslt-dev gd-dev geoip-dev \
  && addgroup -g 101 -S nginx \
  && adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx \
