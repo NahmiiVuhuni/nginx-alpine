@@ -4,4 +4,4 @@ The provided Dockerfile is a script used to build a final monolithic image, and 
 Other projects included only in the final image:
 Nginx, released under the BSD 2-Clause License.
 Naxsi, released under the GNU General Public License v3.0.
-nginx-dav-ext-module, released under the bSD 2-Clause License.
+nginx-dav-ext-module, released under the BSD 2-Clause License.
