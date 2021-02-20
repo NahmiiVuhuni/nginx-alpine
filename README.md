@@ -2,13 +2,6 @@
 - **Maintained by**: [Hubok](https://github.com/Hubok) and [the Nginx Developers](https://trac.nginx.org/nginx/browser)
 - **Where to get help**: [the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
 
-# Supported tags and respective `Dockerfile` links
-- [`1.19.6`, `mainline`, `latest`](https://github.com/Hubok/nginx-alpine/blob/1.19.6/Dockerfile)
-- [`1.19.5`](https://github.com/Hubok/nginx-alpine/blob/1.19.5/Dockerfile)
-- [`1.19.4`](https://github.com/Hubok/nginx-alpine/blob/1.19.4/Dockerfile)
-- [`1.19.3`](https://github.com/Hubok/nginx-alpine/blob/1.19.3/Dockerfile)
-- [`1.19.2`](https://github.com/Hubok/nginx-alpine/blob/1.19.2/Dockerfile)
-
 # Quick reference (cont.)
 - **Where to file issues**: https://github.com/Hubok/nginx-alpine/issues
 - **Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64)) `amd64`
