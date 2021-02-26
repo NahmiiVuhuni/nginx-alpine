@@ -2,6 +2,8 @@ This project is released under the BSD 3-Clause License, provided in the LICENSE
 The provided Dockerfile is a script used to build a final monolithic image, and the script grabs other works that are licensed seperately, and that image is provided on Docker Hub for ease of use.
 
 Other projects included only in the final image:
+Alpine, a Linux distribution based upon the Linux kernel, released under the GNU General Public License v2.0 with modifications, and including a variety of OSI-approved-licensed packages. Alpine maintains a list of packages, however only a fraction are found in the final image. https://pkgs.alpinelinux.org/packages
 Nginx, released under the BSD 2-Clause License.
 Naxsi, released under the GNU General Public License v3.0.
 nginx-dav-ext-module, released under the BSD 2-Clause License.
+ngx-fancyindex, released under the BSD 2-Clause License.
