@@ -32,5 +32,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: hubok/nginx-alpine:${{ steps.branch_name.outputs.SOURCE_BRANCH }}
+        name: docker-image
         path: /tmp/image.tar
