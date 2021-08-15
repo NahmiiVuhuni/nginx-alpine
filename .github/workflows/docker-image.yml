@@ -34,21 +34,14 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build, export, and push
+    - name: Build and push
       uses: docker/build-push-action@v2
       with:
         context: .
         platforms: linux/amd64
         push: true
-        outputs: type=docker,dest=/tmp/image.tar
         tags: |
           hubok/nginx-alpine:${{ steps.github_ref.outputs.SOURCE }}
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: docker-image
-        path: /tmp/image.tar
 
     - name: Update DockerHub repo description
       uses: peter-evans/dockerhub-description@v2
