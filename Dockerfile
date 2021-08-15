@@ -13,8 +13,8 @@ COPY src /
 WORKDIR /root/build/nginx
 
 RUN apk -U upgrade \
- && apk add --no-cache gzip pcre zlib perl openssl libxslt gd geoip curl \
- && apk add --no-cache --virtual .build linux-headers perl-dev gnupg wget g++ pcre-dev zlib-dev make openssl-dev libxslt-dev gd-dev geoip-dev \
+ && apk add --no-cache gzip pcre zlib perl openssl libxslt gd geoip curl libaio \
+ && apk add --no-cache --virtual .build linux-headers perl-dev gnupg wget g++ pcre-dev zlib-dev make openssl-dev libxslt-dev gd-dev geoip-dev libaio-dev \
  && addgroup -g 101 -S nginx \
  && adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx \
  && wget https://nginx.org/download/nginx-${VERSION_NGINX}.tar.gz -O /root/build/nginx.tar.gz \
