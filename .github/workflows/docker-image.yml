@@ -31,8 +31,8 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v1 
       with:
-        username: ${{ secrets.DOCKER_HUB_USER_NAME }}
-        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build, export, and push
       uses: docker/build-push-action@v2
@@ -53,6 +53,6 @@ jobs:
     - name: Update DockerHub repo description
       uses: peter-evans/dockerhub-description@v2
       with:
-        username: ${{ secrets.DOCKER_HUB_USER_NAME }}
-        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
         repository: hubok/nginx-alpine
