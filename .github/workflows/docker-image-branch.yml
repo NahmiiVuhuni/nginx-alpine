@@ -1,0 +1,19 @@
+name: Build Docker Image - Branch
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Branch name
+      id: branch_name
+      run: echo ::set-output name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag hubok/nginx-alpine:$SOURCE_BRANCH
+      env: 
+        SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
