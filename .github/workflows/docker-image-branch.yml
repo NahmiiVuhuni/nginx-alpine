@@ -28,9 +28,9 @@ jobs:
         context: .
         file: ./Dockerfile
         tags: hubok/nginx-alpine:${{ steps.branch_name.outputs.SOURCE_BRANCH }}
-        outputs: type=oci,dest=/tmp/image.tar
+        outputs: type=docker,dest=/tmp/image.tar
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: hubok/nginx-alpine:${{ steps.branch_name.outputs.SOURCE_BRANCH }}
-        path: /tmp/myimage.tar
+        path: /tmp/image.tar
