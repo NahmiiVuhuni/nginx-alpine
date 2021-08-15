@@ -75,7 +75,8 @@ RUN apk -U upgrade \
  --add-dynamic-module=/root/build/nginx/naxsi/naxsi_src \
  --add-dynamic-module=/root/build/nginx/nginx-dav-ext \
  --add-dynamic-module=/root/build/nginx/fancyindex \
-# && make CC=gcc-6 \
+ --with-ld-opt="-Wl,-pie -Wl,-z,defs -Wl,-z,now -Wl,-z,relro" \
+ --with-cc-opt="-Os -D_FORTIFY_SOURCE=2 -D_GLIBCXX_ASSERTIONS -fasynchronous-unwind-tables -fexceptions -fpie -fpic -shared -fplugin=annobin -fstack-clash-protection -fstack-protector-all -fstack-protector-strong -mcet -fcf-protection -pipe -Wall -Werror=format-security -Werror=implicit-function-declaration" \
  && make \
  && make install \
  && apk del --no-cache .build \
