@@ -18,7 +18,7 @@ jobs:
     - name: GitHub REF Data
       id: github_ref
       run: |
-        echo ::set-output name=SOURCE::${GITHUB_REF##*/}
+        if [[ ${GITHUB_REF##*/} != "master" ]]; then echo ::set-output name=SOURCE::${GITHUB_REF##*/}; else echo ::set-output name=SOURCE::latest; fi
         echo ${GITHUB_REF}
         echo ${GITHUB_REF##*/}
 
