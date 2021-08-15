@@ -38,7 +38,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        platforms: linux/amd64
+        platforms: linux/amd64,linux/386
         push: true
         tags: |
           hubok/nginx-alpine:${{ steps.github_ref.outputs.SOURCE }}
