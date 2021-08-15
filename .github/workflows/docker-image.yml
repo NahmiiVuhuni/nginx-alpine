@@ -2,6 +2,9 @@ name: Build Docker Image
 
 on:
   push:
+  release:
+    types:
+      - created
     paths-ignore:
     - '**/LICENSE'
     - '**/NOTICE'
