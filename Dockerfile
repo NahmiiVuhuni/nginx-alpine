@@ -10,8 +10,6 @@ ENV VERSION_FANCYINDEX      0.5.1
 
 COPY src /
 
-RUN mkdir /root/build/nginx
-
 WORKDIR /root/build/nginx
 
 RUN apk -U upgrade \
