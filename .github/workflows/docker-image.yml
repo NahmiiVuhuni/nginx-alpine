@@ -18,6 +18,7 @@ jobs:
     - name: GitHub REF Data
       id: github_ref
       run: |
+        echo ${GITHUB_REF}
         echo ::set-output name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
         echo ::set-output name=SOURCE_TAG::${GITHUB_REF/refs\/tags\//}
 
