@@ -10,7 +10,11 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '45 5 * * 2'
+    - cron: '45 5 * * 2'on:
+  paths-ignore:
+  - '**/LICENSE'
+  - '**/NOTICE'
+  - '**/README.md'
 
 jobs:
   Anchore-Build-Scan:
