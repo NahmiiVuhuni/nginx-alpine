@@ -4,7 +4,7 @@
 
 # Quick reference (cont.)
 - **Where to file issues**: https://github.com/Hubok/nginx-alpine/issues
-- **Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64)) `amd64`
+- **Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64)) `amd64` `i386`
 
 # What is this image?
 This image builds Nginx **from source**, compiling all first-party modules except Google Performance tools, and with [Naxsi](https://github.com/nbs-system/naxsi), [nginx-dav-ext-module](https://github.com/arut/nginx-dav-ext-module), and [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex). This image pulls from Alpine directly, **not** fork from Nginx, so the Nginx Docker Maintainers should not be contacted with issues.
