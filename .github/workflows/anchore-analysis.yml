@@ -8,13 +8,13 @@ name: Anchore Container Scan
 
 on:
   push:
+    paths-ignore:
+    - '**/LICENSE'
+    - '**/NOTICE'
+    - '**/README.md'
   pull_request:
   schedule:
-    - cron: '45 5 * * 2'on:
-  paths-ignore:
-  - '**/LICENSE'
-  - '**/NOTICE'
-  - '**/README.md'
+    - cron: '45 5 * * 2'
 
 jobs:
   Anchore-Build-Scan:
