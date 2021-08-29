@@ -14,7 +14,7 @@ on:
     - '**/README.md'
   pull_request:
   schedule:
-    - cron: '45 5 * * 2'
+    - cron: '45 5 * * *'
 
 jobs:
   Anchore-Build-Scan:
