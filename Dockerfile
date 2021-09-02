@@ -1,9 +1,9 @@
-FROM alpine:3.14.1
+FROM alpine:3.14.2
 
 LABEL Maintainer="Hubok <docker-maint@hubok.net>" \
       Description="Nginx container on Alpine, compiled from source with naxsi and nginx-dav-ext-module."
 
-ENV VERSION_NGINX           1.21.1
+ENV VERSION_NGINX           1.21.2
 ENV VERSION_NAXSI           1.3
 ENV VERSION_DAV_EXT_MODULE  3.0.0
 ENV VERSION_FANCYINDEX      0.5.1
