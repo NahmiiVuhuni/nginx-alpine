@@ -1,3 +1,5 @@
+[![Build Docker Image](https://github.com/Hubok/nginx-alpine/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Hubok/nginx-alpine/actions/workflows/docker-image.yml) [![Anchore Container Scan](https://github.com/Hubok/nginx-alpine/actions/workflows/anchore-analysis.yml/badge.svg)](https://github.com/Hubok/nginx-alpine/actions/workflows/anchore-analysis.yml)
+
 # Quick reference
 - **Maintained by**: [Hubok](https://github.com/Hubok) and [the Nginx Developers](https://trac.nginx.org/nginx/browser)
 - **Where to get help**: [the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
